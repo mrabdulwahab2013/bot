@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>JAWAD-MD | Mini BOT</title>
+  <title>WAHAB-MD | Mini BOT</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -931,16 +930,16 @@
             <i class="fas fa-bolt"></i>
           </div>
         </div>
-        <h1 class="title" id="mainTitle">JAWAD-MD</h1>
+        <h1 class="title" id="mainTitle">WAHAB-MD</h1>
         <p class="subtitle">Generate Your Pairing Code</p>
       </div>
 
       <div class="bot-toggle">
-        <button type="button" class="bot-btn active" id="jawadBtn">
-          <i class="fas fa-bolt"></i> JAWAD-MD
+        <button type="button" class="bot-btn active" id="WAHABBtn">
+          <i class="fas fa-bolt"></i> WAHAB-MD
         </button>
-        <button type="button" class="bot-btn" id="khanBtn">
-          <i class="fas fa-crown"></i> KHAN-MD
+        <button type="button" class="bot-btn" id="WAHABBtn">
+          <i class="fas fa-crown"></i> WAHAB-MD 2
         </button>
       </div>
 
@@ -1035,7 +1034,7 @@
 
       <div class="footer">
         <p class="footer-text">
-          © 2026 JAWAD-MD | Powered By JawadTechX
+          © 2026 WAHAB-MD | Powered By WAHABTechX
         </p>
       </div>
     </div>
@@ -1111,20 +1110,20 @@
     const activeLabel = document.getElementById('activeLabel');
     const mainTitle = document.getElementById('mainTitle');
     const serverSelectionTitle = document.getElementById('serverSelectionTitle');
-    const jawadBtn = document.getElementById('jawadBtn');
-    const khanBtn = document.getElementById('khanBtn');
+    const WAHABBtn = document.getElementById('WAHABBtn');
+    const WAHABBtn = document.getElementById('WAHABBtn');
 
     let currentCode = null;
     let selectedServer = null;
     let cooldownTimer = null;
     let cooldownSeconds = 0;
-    // activeBot: null = default (shows ALL 200), 'jawad' = 1-100, 'khan' = 101-200 (names shown as 1-100)
+    // activeBot: null = default (shows ALL 200), 'WAHAB' = 1-100, 'WAHAB' = 101-200 (names shown as 1-100)
     let activeBot = null;
 
     // ============================================
-    // 1) JAWAD SERVERS (1-100) - HARDCODED
+    // 1) WAHAB SERVERS (1-100) - HARDCODED
     // ============================================
-    const JawadServers = [
+    const WAHABServers = [
       { id: 'server1', name: 'Server 1' }, { id: 'server2', name: 'Server 2' }, { id: 'server3', name: 'Server 3' }, { id: 'server4', name: 'Server 4' }, { id: 'server5', name: 'Server 5' },
       { id: 'server6', name: 'Server 6' }, { id: 'server7', name: 'Server 7' }, { id: 'server8', name: 'Server 8' }, { id: 'server9', name: 'Server 9' }, { id: 'server10', name: 'Server 10' },
       { id: 'server11', name: 'Server 11' }, { id: 'server12', name: 'Server 12' }, { id: 'server13', name: 'Server 13' }, { id: 'server14', name: 'Server 14' }, { id: 'server15', name: 'Server 15' },
@@ -1148,9 +1147,9 @@
     ];
 
     // ============================================
-    // 2) KHAN SERVERS (IDs: 101-200, NAMES: 1-100) - HARDCODED
+    // 2) WAHAB SERVERS (IDs: 101-200, NAMES: 1-100) - HARDCODED
     // ============================================
-    const Khanservers = [
+    const WAHABservers = [
       { id: 'server101', name: 'Server 1' }, { id: 'server102', name: 'Server 2' }, { id: 'server103', name: 'Server 3' }, { id: 'server104', name: 'Server 4' }, { id: 'server105', name: 'Server 5' },
       { id: 'server106', name: 'Server 6' }, { id: 'server107', name: 'Server 7' }, { id: 'server108', name: 'Server 8' }, { id: 'server109', name: 'Server 9' }, { id: 'server110', name: 'Server 10' },
       { id: 'server111', name: 'Server 11' }, { id: 'server112', name: 'Server 12' }, { id: 'server113', name: 'Server 13' }, { id: 'server114', name: 'Server 14' }, { id: 'server115', name: 'Server 15' },
@@ -1220,8 +1219,8 @@
     ];
 
     function getActiveServers() {
-      if (activeBot === 'jawad') return JawadServers;
-      if (activeBot === 'khan')  return Khanservers;
+      if (activeBot === 'WAHAB') return WAHABServers;
+      if (activeBot === 'WAHAB')  return WAHABservers;
       return allServers;
     }
 
@@ -1294,19 +1293,19 @@
     function setActiveBot(bot) {
       activeBot = bot;
       
-      jawadBtn.classList.toggle('active', bot === 'jawad');
-      khanBtn.classList.toggle('active', bot === 'khan');
+      WAHABBtn.classList.toggle('active', bot === 'WAHAB');
+      WAHABBtn.classList.toggle('active', bot === 'WAHAB');
       
       selectedServer = null;
       currentServerName.textContent = 'Select Server';
       showOnlineState();
       activeCount.textContent = '--';
       
-      if (bot === 'jawad') {
-        mainTitle.textContent = 'JAWAD-MD';
+      if (bot === 'WAHAB') {
+        mainTitle.textContent = 'WAHAB-MD';
         serverSelectionTitle.textContent = 'Select a Server (1-100)';
-      } else if (bot === 'khan') {
-        mainTitle.textContent = 'KHAN-MD';
+      } else if (bot === 'WAHAB') {
+        mainTitle.textContent = 'WAHAB-MD 2';
         serverSelectionTitle.textContent = 'Select a Server (1-100)';
       }
       
@@ -1316,14 +1315,14 @@
       resetCodeBox();
       generateBtn.disabled = true;
       
-      showToast(`${bot === 'jawad' ? 'JAWAD-MD' : 'KHAN-MD'} servers loaded`, false);
+      showToast(`${bot === 'WAHAB' ? 'WAHAB-MD' : 'WAHAB-MD 2'} servers loaded`, false);
     }
 
-    jawadBtn.addEventListener('click', () => setActiveBot('jawad'));
-    khanBtn.addEventListener('click', () => setActiveBot('khan'));
+    WAHABBtn.addEventListener('click', () => setActiveBot('WAHAB'));
+    WAHABBtn.addEventListener('click', () => setActiveBot('WAHAB'));
 
     function initApp() {
-      // Default: activeBot = null → shows ALL 200 (JAWAD-MD button looks selected visually)
+      // Default: activeBot = null → shows ALL 200 (WAHAB-MD button looks selected visually)
       populateServerGrid(shuffledServers);
       serverInfo.addEventListener('click', showServerSelection);
     }
